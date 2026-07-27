@@ -1,0 +1,143 @@
+<html>
+<head>
+<!------------------------------------------------------------------------------
+ * 
+ * Copyright (c) 1997-2022 The Sage Group plc or its licensors. All Rights Reserved.
+ *
+ * This software is the confidential and proprietary information of Sage Technologies Limited,
+ * as such, you may not disclose this to any third parties, and shall only use it in
+ * accordance with the terms and license agreement you entered into with Sage Technologies Limited.
+ *
+ * Sage Technologies Limited is a whole own subsidiary of The Sage Group plc
+ ------------------------------------------------------------------------------->
+<!-- http[s]://{host}/{CRM-Instance}/CustomPages/OAuth/callback.html -->
+  <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <META HTTP-EQUIV="Expires" CONTENT="-1">
+  <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+  <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache,no-Store">
+  <meta name="copyright" content="1997-2024, Sage Technologies Limited. All Rights reserved" />
+  <link rel="stylesheet" href="../../Themes/ergonomic.css">
+  
+  <style type="text/css">
+   
+   .PageContents {
+      width:60%;
+      height: 50%;
+      background: white;
+      color:black;
+      text-align: left;
+      border-radius: 25px;
+      padding-bottom: 7.5px;
+      font: "Sage UI", Arial,Helvetica,sans-serif;
+    }
+     
+    .PageContents>span,
+    .PageContents>p  {
+          padding-left: 10px;
+          margin-left: 5px;
+          margin-right:5px;
+    }
+
+    .PageTitle {
+      text-align: center;
+      font: Bold 16px "Sage UI", Arial,Helvetica,sans-serif;
+    }  
+  </style>
+</head>
+<body>
+<div align="center" class="PageHeader"><img class="TitleIcon" src="../../Img/logon/gif/Sage_Logo_Brilliant_Green.svg" style="Width:400px;"></div>
+<div align="center">
+  <div class="PageContents" >
+    <p class="PageTitle" id="PageTitle">OAuth 2.0 configuration call back</p>
+    <span id="Processing" style="text-align:left">Processing OAuth details.....</span>
+    <p id='ErrorMsg' style='width:auto' ></p>
+    <span id='Msg2'></span>
+  </div>
+</div>
+</body>
+
+<script>
+//==============================================================================
+// This script transfers OAuth 2.0 details to CRM
+// DO NOT CHANGE
+//==============================================================================
+const cPrefixes = ['EMC_','EmSe_'];
+let msg=document.getElementById('ErrorMsg');
+let msg2=document.getElementById('Msg2');
+let sErrorMsg='';
+if(window.opener) // Must be called from CRM
+{
+  let CurrentUser = window.opener.CurrentUser;
+  let crm = window.opener.crm || {};
+  let manager = window.opener.SageCRM.wsEmailManagerIntegrations || window.opener.SageCRM.wsExchangeIntegrations;
+
+  let sTemp = crm.getTrans("GenCaptions","ProcessingOAuth");
+  if(sTemp!='ProcessingOAuth') document.getElementById('PageTitle').innerText = sTemp;
+  sTemp = crm.getTrans("GenCaptions","Processing");
+  if(sTemp!='Processing') document.getElementById('Processing').innerText = sTemp;
+
+  let NotConnected = crm.getTrans("GenCaptions","NotConnected");
+  let ConnectMethed = crm.getTrans("GenCaptions","ConnectMethed");
+  let SavingSettings = crm.getTrans("GenCaptions","SavingSettings");// 'Saving Settings ...';
+  
+  if (NotConnected==='NotConnected') {NotConnected = "Cannot connect to your email account because you navigated away from the sign-in page.";}
+  if (ConnectMethed==='ConnectMethed') {ConnectMethed = 'Return to your user preferences and select <b>Connect to Email Account</b>.';}
+  let Message = crm.getTrans("Errors","AuthConnectionClose");
+
+  try {
+	const urlParams = new URLSearchParams(window.location.search);
+  	const oAuthCode = urlParams.get('code');
+    const pPrefix = urlParams.get('prefix');
+    // msg.innerText = urlParams; // DEBUG
+
+   //check Params for error:  error=invalid_client&error_description
+    const error = urlParams.get('error');
+    if (error) {
+       sErrorMsg = urlParams.get('error_description');
+    } else {
+      let bUpdated=false;
+      for(prefix of cPrefixes )  {
+    	  if (window.opener.document.getElementById(prefix+"AuthCode") !== null) {
+          console.log(prefix+"AuthCode="+oAuthCode);
+    		window.opener.document.getElementById(prefix+"AuthCode").value = oAuthCode;
+    		window.opener.document.getElementById("_HIDDEN"+prefix+"AuthCode").value = oAuthCode;
+          bUpdated=true;
+        }
+      }
+      // Uses Lower case!!!  
+  	if (window.opener.document.getElementById("exin_authcode") !== null) {
+    		window.opener.document.getElementById("exin_authcode").value = oAuthCode;
+    		window.opener.document.getElementById("_HIDDENexin_authcode").value = oAuthCode;
+          bUpdated=true;
+  		const oState = urlParams.get('state');
+  		window.opener.document.getElementById("_HIDDENexin_state").value = oState;
+  	} else if (window.opener.document.getElementById("AuthCode") !== null) {
+          console.log("AuthCode="+oAuthCode);
+  		window.opener.document.getElementById("AuthCode").value = oAuthCode;
+          bUpdated=true;
+      }
+      if (bUpdated ) {
+          msg.innerText = SavingSettings;
+  		manager.saveSettingsGeneric();
+        window.close();
+      } else {
+        sErrorMsg = NotConnected;
+        msg2.innerHTML = ConnectMethed;
+      } 
+    }
+  } catch (err) {
+      sErrorMsg = err.message;
+  }
+}
+else
+{
+    sErrorMsg = "Must be called from within the CRM environment";
+}
+if (sErrorMsg){
+	msg.innerText = sErrorMsg;
+    msg.classList.add("ErrorContent");
+}
+//==============================================================================
+</script>
+
+</html>

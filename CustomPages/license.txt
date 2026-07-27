@@ -1,0 +1,63 @@
+SOFTWARE END USER LICENSE AGREEMENT
+
+TOGETHER SOFTWARE LIMITED a company incorporated in Ireland trading as "CRM Together" (“CRM Together”) presents "Accelerator for Sage CRM".
+
+IMPORTANT - READ CAREFULLY
+
+This software license Agreement constitutes a legal agreement (the "License”/ the “Agreement") between you the Licensee and CRM Together for the software product "Accelerator for Sage CRM" identified above (the “Software”), including any software, media, and accompanying on-line or printed documentation.
+
+BY INSTALLING, COPYING, OR OTHERWISE USING THE SOFTWARE, YOU AGREE TO ACCEPT AND BE BOUND BY ALL OF THE TERMS AND CONDITIONS OF THE LICENSE.
+
+Product support for the Software is given by CRM Together or its nominated provider via email (for purchased support) and/or online customer portal.
+
+Upon your acceptance of the terms and conditions of the License, CRM Together grants you the right to use the Software in the manner provided below only.
+
+The Software is owned by or validly licensed to "CRM Together" and is protected by copyright law and intellectual property rights.  Therefore, you may either make one copy of the Software solely for backup or archival purposes or transfer the Software to a single hard disk provided you keep the original solely for backup or archival purposes.
+
+The Software is licensed to you but title to the Software remains with CRM Together and does not pass to you the user in any circumstances. The Software is supplied in a mix of compiled and source code.  
+
+The provided source code of the Software may not be edited without the explicit prior written consent of CRM Together and any attempt to do so will so will result in termination of the License and any support and maintenance. 
+
+You may not transfer, assign, rent, lease, lend, copy, sublicense, time-share or electronically transmit or receive the Software, media or documentation. You acknowledge that the Software in compiled and source code form remains a confidential trade secret of "CRM Together" and therefore you agree not to modify the hidden components of the Software or attempt to reverse engineer, decompile, or disassemble the Software, except and only to the extent that such activity is expressly permitted by applicable law.  Any attempt to do so will result in immediate termination of the License and any support and maintenance.
+
+If you breach any other clause of this Agreement "CRM Together" shall be entitled to terminate this Agreement on giving you 30 days notice.
+
+Files that have not been compiled can be changed and updated but once they are, support for their default functionality can no longer be provided.
+
+If you have purchased an upgrade version of the Software, it constitutes a single product with the "CRM Together" software that you upgraded. You may use or transfer the upgrade version of the Software only in accordance with the License Agreement.
+
+ADDITIONAL LICENSE TERMS 
+
+"CRM Together" grants to you a personal, non-assignable, non-sub-licensable, non-exclusive license to create a single install of the Software.
+
+To run the Software on a production server a license must be purchased from CRM Together.  The license cost depends on the number of licenses purchased from Sage to run the CRM product. If in future additional licenses are purchased then "Accelerator for Sage CRM" is subject to an additional purchase also.
+
+LIMITED WARRANTY
+
+CRM Together warrants that:
+(i) the Software, as updated and when properly used, will perform substantially in accordance with the accompanying documentation, and 
+(ii) the Software media will be free from defects in materials and workmanship, 
+for a period of ninety (90) days from the date of receipt (the “Warranty”).  
+
+Other than the Warranty, all implied warranties in relation to the Software including in relation to merchantability, fitness for purpose or otherwise whether under contract, tort or statute are hereby excluded.  
+
+CRM Together will not accept any liability for any database records, folders, files or documents that become corrupted or deleted through the use of its Software.
+
+CRM Together will not accept any liability for dangerous or malicious data or files that have been uploaded to the server using "Accelerator for Sage CRM". It is your responsibility to secure your server from malicious attacks.
+
+CRM Together and its supplier’s entire liability and your exclusive remedy shall be, at CRM Together’s option, either 
+
+(a) return of the price or licence fee paid by you for the Software, or 
+
+(b) repair or replacement of the Software that does not meet CRM Together's Warranty and which Software is returned to CRM Together with a copy of your receipt. 
+
+DO NOT RETURN ANY PRODUCT UNTIL YOU HAVE CONTACTED CRM TOGETHER.
+
+The Software and this Licence is subject to Irish law.
+
+Exclusion of Consequential Loss.  UNDER NO CIRCUMSTANCES SHALL CRM TOGETHER BE LIABLE TO YOU OR ANY THIRD PARTY FOR INDIRECT, INCIDENTAL, CONSEQUENTIAL, SPECIAL OR EXEMPLARY DAMAGES (EVEN IF CRM TOGETHER HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES), ARISING FROM ANY PROVISION OF THIS LICENSE SUCH AS, BUT NOT LIMITED TO, LOSS OF REVENUE OR ANTICIPATED PROFIT OR LOST BUSINESS, COSTS OF DELAY OR FAILURE OF DELIVERY, OR LIABILITIES TO THIRD PARTIES ARISING FROM ANY SOURCE.
+
+Limitation of Liability.  Under no circumstances shall the total liability of CRM Together under this License exceed the amount paid by you under this License.
+
+Disputes. Any controversy or claim arising out of or relating to this License, or the breach thereof, may be referred by CRM Together in its sole discretion to and settled by a third party independent expert appointed by the agreement of the parties hereto (the “Expert”).  In default of agreement the Expert shall be appointed by the President of the Law Society of Ireland and the Expert shall in any case act as an expert and not as an arbitrator.  Both parties shall provide all information requested by the Expert in order to allow the Expert to give a final decision within 30 days of his appointment.  The decision of the Expert shall be final absent manifest error and no appeal shall lie from such decision.  The cost of the referral to the Expert shall be paid by the Licensee. Any and all legal fees for all parties will be paid by the Licensee.
+Agreement:  This Licence is the entire agreement between the parties hereto and shall only be varied by means of an instrument in writing signed by both parties.
